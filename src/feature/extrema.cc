@@ -15,7 +15,8 @@ namespace pano {
 
 ExtremaDetector::ExtremaDetector(const DOGSpace& dg):
 	dog(dg) {}
-/*与8邻域和上下18点工26点比较大小，判断是否为极值点，是则存储并把坐标还原为原图像坐标
+/*使用get_local_raw_extrema（）函数：与8邻域和上下18点工26点比较大小，判断是否为极值点，是则存储，
+存储的坐标还原为原图像坐标
 */
 vector<Coor> ExtremaDetector::get_raw_extrema() const {
 	vector<Coor> ret;
@@ -168,6 +169,7 @@ bool ExtremaDetector::is_edge_response(Coor coor, const Mat32f& img) const {
 	return true;
 }
 
+/*与8邻域和上下18点工26点比较大小*/
 vector<Coor> ExtremaDetector::get_local_raw_extrema(
 		int pyr_id, int scale_id) const {
 	vector<Coor> ret;
