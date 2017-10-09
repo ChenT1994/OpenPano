@@ -15,7 +15,8 @@ namespace pano {
 
 ExtremaDetector::ExtremaDetector(const DOGSpace& dg):
 	dog(dg) {}
-
+/*与8邻域和上下18点工26点比较大小，判断是否为极值点，是则存储并把坐标还原为原图像坐标
+*/
 vector<Coor> ExtremaDetector::get_raw_extrema() const {
 	vector<Coor> ret;
 	int npyramid = dog.noctave, nscale = dog.nscale;
