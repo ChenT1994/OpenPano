@@ -179,6 +179,7 @@ vector<Coor> ExtremaDetector::get_local_raw_extrema(
 
 	auto is_extrema = [this, &now, pyr_id, scale_id](int r, int c) {
 		float center = now.at(r, c);
+	/*若值低于某个阈值直接去除，即低对比度的值*/
 		if (center < PRE_COLOR_THRES)			// initial color is less than thres
 			return false;
 
