@@ -163,7 +163,7 @@ bool ExtremaDetector::is_edge_response(Coor coor, const Mat32f& img) const {
 	float det = dxx * dyy - dxy * dxy;
 	if (det <= 0) return true;
 	float tr2 = sqr(dxx + dyy);
-
+	/*文章中是迹的平方*/
 	// Calculate principal curvature by hessian
 	if (tr2 / det < sqr(EDGE_RATIO + 1) / EDGE_RATIO) return false;
 	return true;
