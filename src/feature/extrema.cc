@@ -44,6 +44,7 @@ vector<SSPoint> ExtremaDetector::get_extrema() const {
 		REPL(j, 1, nscale - 2) {
 			auto v = get_local_raw_extrema(i, j);
 			//print_debug("raw extrema count: %lu\n", v.size());
+		/*针对每一个候选点，进行精确定位同时筛除无法定位的？？和边缘响应的点*/
 			for (auto& c : v) {
 				SSPoint sp;
 				sp.coor = c;
